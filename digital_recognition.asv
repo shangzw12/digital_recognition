@@ -1,0 +1,3 @@
+function rate = digital_recognition(funcName, fileName)
+data = csvread(fileName,1, 0);
+crossValida

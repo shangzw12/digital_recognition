@@ -26,7 +26,7 @@ for j = 1:1:10
             trainSet_count = trainSet_count +1;
         end
     end
-    correct_rate(j) = KNN(testSet, testLabel, trainSet, trainLabel,K);
+    correct_rate(j) =linear_reg(testSet, testLabel, trainSet, trainLabel,K);
 end
 %disp(correct_rate);
 res = mean(correct_rate);

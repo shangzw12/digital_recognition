@@ -1,0 +1,31 @@
+function correct_rate = linear_reg(trainData, trainLabel, testData, testLabel, lambda)
+[trainCount, data_len] = size(trainData);
+[testcount, ~] = size(testData);
+A  = zeors(data_len +1);
+B = zeros(data_len + 1, 1);
+Lam = lambda*eye(data_len + 1);
+trainCount = 0;
+for trainRow = trainData'
+    trainCount = trainCount +1;
+    A = A+trainRow*trainRow';
+    B = B + trainLabel(trainCount)*trainRow;
+end
+w = linsolve(A+Lam, B);
+correctCount = 0;
+testCount = 0;
+for testRow = testData'
+    testCount = testCount +1;
+    tmp_ans = w*testRow';
+    for i = 1:1:10
+        if(tmp_ans - i <0.5 || tem_ans - i >=-.5)
+            if(testLabel(testCount) == i)
+                correctCount = correctCount+1;
+            end
+            break;
+        end
+    end
+end
+correctRate = correctCount/ test_count;
+        
+            
+    
