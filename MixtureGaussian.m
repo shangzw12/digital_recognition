@@ -1,0 +1,1 @@
+function [correct_rate, wrong_list, wrong_label, right_label] = MixtureGaussian(trainData, trainLabel, testData, testLabel, lambda)
