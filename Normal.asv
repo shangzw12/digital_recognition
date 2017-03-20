@@ -1,0 +1,4 @@
+function a = Normal(mu, sigma, sigma_1, X)
+assert(size(mu)*[0, 1]' == 1, 'Input mu wrong!');
+assert(size(sigma)*[1,1]' == size(sigma_1)*[1,1]', 'Input sigma wrong!');
+assert(size(X))

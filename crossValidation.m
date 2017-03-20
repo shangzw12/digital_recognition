@@ -10,8 +10,8 @@ function  rate = crossValidation( f_handle)
 %f_handle just has one output, the correct rate
 load('data', 'data');
 load('data', 'label');
-%data = data(1:500,:);
-%label = label(1:500,:);
+data = data(1:500,:);
+label = label(1:500,:);
 assert(size(data)*[0,1]' == 784, 'Load data dimension wrong \n');
 assert(size(data)*[1, 0]' == size(label)*[1, 0]', 'Label data length not match \n');
 [dataCount, dataLen] = size(data);
@@ -29,6 +29,7 @@ for i=1:1:10
     testData = data(ind, :);
     testLabel = label(ind, :);
     res  =[res ;f_handle(trainData, trainLabel, testData, testLabel)];
+    disp(res);
 end
 %disp(correct_rate);
 disp(mean(res));

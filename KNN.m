@@ -1,6 +1,6 @@
 % do KNN use data given as arguments
 % All input 
-% testData: vertical vector without label
+% testData: each row is a data
 % testLabel: corresponding label, just a signle column
 % trainData, trainLabel just like those above
 % K refers to KNN's K

@@ -1,6 +1,6 @@
 % do linear regression use data given as arguments
 % All input 
-% testData: vertical vector without label
+% testData: each row is a data
 % testLabel: corresponding label, just a signle column
 % trainData, trainLabel just like those above
 % lambda: used to regulize
@@ -60,7 +60,7 @@ correct_rate = correctCount/ test_count;
 wrong_list = w_list';
 wrong_label = w_label;  
 right_label = r_label;
-assert(size(wrong_label) == [1, test_count], 'Output wrong_label wrong\n');
+assert(size(wrong_label)*[0, 1]' ==  test_count, 'Output wrong_label wrong\n');
 assert(size(right_label) == size(wrong_label), 'Output wrong and right label not match \n');
 
         
